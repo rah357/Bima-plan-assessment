@@ -5,8 +5,6 @@ import {
   Post,
   Body,
   Param,
-  Put,
-  Delete,
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
@@ -42,15 +40,5 @@ export class PersonController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.personService.findOne(id);
-  }
-
-  @Put(':id')
-  update(@Param('id') id: string, @Body() updatePersonDto: CreatePersonDto) {
-    return this.personService.update(id, updatePersonDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.personService.remove(id);
   }
 }
